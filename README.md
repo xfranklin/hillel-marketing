@@ -9,7 +9,7 @@ Static Eleventy (11ty) storefront for GTM / GA4 training scenarios.
 - Cart modal (no separate cart page)
 - Cart persisted in `localStorage`
 - Fake checkout (`Promise` + `setTimeout(500ms)`) redirecting to `/success/`
-- No GTM / GA4 implementation
+- GTM container snippet (configurable ID)
 
 ## Project structure
 
@@ -53,4 +53,14 @@ npm run build
 ```bash
 npm run format
 npm run format:check
+```
+
+## GTM config
+
+Set your GTM container ID in `src/_data/site.json`:
+
+```json
+{
+  "gtmId": "GTM-XXXXXXX"
+}
 ```
