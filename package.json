@@ -1,0 +1,15 @@
+{
+  "name": "hillel-marketing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "prettier": "^3.4.2"
+  }
+}

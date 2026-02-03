@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Portable Speaker">
+  <rect width="800" height="600" fill="#eefcff" />
+  <rect x="240" y="180" width="320" height="250" rx="28" fill="#2d6173" />
+  <circle cx="400" cy="305" r="90" fill="#9de6ff" />
+  <circle cx="400" cy="305" r="40" fill="#2d6173" />
+</svg>

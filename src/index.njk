@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+
+<section>
+  <h1>Products</h1>
+  <div class="products-grid">
+    {% for product in products %}
+      <article class="product-card">
+        <a href="/products/{{ product.id }}/" class="product-link">
+          <img src="{{ product.image }}" alt="{{ product.name }}" class="product-image" />
+          <h2>{{ product.name }}</h2>
+        </a>
+        <p class="product-meta">{{ product.category }}</p>
+        <p class="product-price">${{ product.price | round(2) }}</p>
+        <div class="product-actions">
+          <a href="/products/{{ product.id }}/" class="details-link">View details</a>
+          <button
+            type="button"
+            class="add-button"
+            data-add-to-cart
+            data-product-id="{{ product.id }}"
+            data-product-name="{{ product.name }}"
+            data-product-price="{{ product.price }}"
+            data-product-currency="{{ product.currency }}"
+            data-product-image="{{ product.image }}"
+            data-product-quantity="{{ product.quantity }}"
+          >
+            Add to cart
+          </button>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

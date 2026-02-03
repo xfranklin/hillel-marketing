@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Wireless Headphones">
+  <rect width="800" height="600" fill="#eef5ff" />
+  <circle cx="400" cy="300" r="150" fill="#b4c8ff" />
+  <path d="M280 330a120 120 0 1 1 240 0" fill="none" stroke="#223b7b" stroke-width="28" />
+  <rect x="250" y="330" width="50" height="110" rx="18" fill="#223b7b" />
+  <rect x="500" y="330" width="50" height="110" rx="18" fill="#223b7b" />
+</svg>

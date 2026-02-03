@@ -1,0 +1,26 @@
+<div class="cart-modal" data-cart-modal aria-hidden="true">
+  <div class="cart-backdrop" data-cart-close></div>
+  <aside class="cart-panel" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button type="button" class="icon-button" data-cart-close aria-label="Close cart">×</button>
+    </div>
+
+    <ul class="cart-items" data-cart-items></ul>
+
+    <form class="cart-footer" data-checkout-form>
+      <p class="cart-total">Total: <strong data-cart-total>$0.00</strong></p>
+      <div class="checkout-fields">
+        <label>
+          Name
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label>
+          Email
+          <input type="text" name="email" autocomplete="email" required />
+        </label>
+      </div>
+      <button type="submit" class="checkout-button" data-cart-checkout>Checkout</button>
+    </form>
+  </aside>
+</div>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="USB C Hub">
+  <rect width="800" height="600" fill="#f0f7ff" />
+  <rect x="180" y="250" width="440" height="130" rx="26" fill="#3f5d7f" />
+  <rect x="220" y="290" width="90" height="16" rx="4" fill="#cfe0ff" />
+  <rect x="330" y="290" width="90" height="16" rx="4" fill="#cfe0ff" />
+  <rect x="440" y="290" width="90" height="16" rx="4" fill="#cfe0ff" />
+  <rect x="550" y="286" width="30" height="24" rx="4" fill="#9fb9e6" />
+</svg>

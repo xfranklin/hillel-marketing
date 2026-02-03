@@ -1,0 +1,62 @@
+[
+  {
+    "id": "0001",
+    "name": "Wireless Headphones X1",
+    "category": "Audio",
+    "description": "Over-ear wireless headphones with active noise canceling and up to 30 hours battery life.",
+    "price": 129.99,
+    "currency": "USD",
+    "image": "https://images.unsplash.com/photo-1598331668826-20cecc596b86",
+    "quantity": 1
+  },
+  {
+    "id": "0002",
+    "name": "Smart Watch Active",
+    "category": "Wearables",
+    "description": "Lightweight smartwatch with heart-rate tracking, sleep insights, and 5-day battery.",
+    "price": 199,
+    "currency": "USD",
+    "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a",
+    "quantity": 1
+  },
+  {
+    "id": "0003",
+    "name": "Mechanical Keyboard Pro",
+    "category": "Accessories",
+    "description": "Compact mechanical keyboard with tactile switches, RGB backlight, and hot-swap support.",
+    "price": 89.5,
+    "currency": "USD",
+    "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef",
+    "quantity": 1
+  },
+  {
+    "id": "0004",
+    "name": "Portable Speaker Mini",
+    "category": "Audio",
+    "description": "Pocket-size Bluetooth speaker with rich bass, IPX7 water resistance, and 12-hour playback.",
+    "price": 74.25,
+    "currency": "USD",
+    "image": "https://images.unsplash.com/photo-1675319245480-215961c129f1",
+    "quantity": 1
+  },
+  {
+    "id": "0005",
+    "name": "4K Webcam Ultra",
+    "category": "Streaming",
+    "description": "4K USB webcam with auto-focus, dual microphones, and low-light correction for calls.",
+    "price": 149,
+    "currency": "USD",
+    "image": "https://images.unsplash.com/photo-1623949556303-b0d17d198863",
+    "quantity": 1
+  },
+  {
+    "id": "0006",
+    "name": "USB-C Hub 8-in-1",
+    "category": "Accessories",
+    "description": "8-in-1 aluminum USB-C hub with HDMI, card readers, PD charging, and multiple USB ports.",
+    "price": 59.99,
+    "currency": "USD",
+    "image": "https://images.unsplash.com/photo-1760376789487-994070337c76",
+    "quantity": 1
+  }
+]
