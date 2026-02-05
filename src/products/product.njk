@@ -9,7 +9,15 @@ eleventyComputed:
   title: "{{ product.name }}"
 ---
 
-<article class="product-page">
+<article
+  class="product-page"
+  data-product-detail
+  data-product-id="{{ product.id }}"
+  data-product-name="{{ product.name }}"
+  data-product-category="{{ product.category }}"
+  data-product-price="{{ product.price }}"
+  data-product-currency="{{ product.currency }}"
+>
   <img src="{{ product.image }}" alt="{{ product.name }}" class="product-page-image" />
   <div>
     <p class="product-meta">{{ product.category }}</p>

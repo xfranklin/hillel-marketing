@@ -10,6 +10,7 @@ const elements = {
   checkoutForm: document.querySelector('[data-checkout-form]'),
   checkoutButton: document.querySelector('[data-cart-checkout]'),
   addButtons: Array.from(document.querySelectorAll('[data-add-to-cart]')),
+  productDetail: document.querySelector('[data-product-detail]'),
 };
 
 const money = new Intl.NumberFormat('en-US', {
@@ -169,6 +170,7 @@ async function fakeCheckout() {
     setTimeout(resolve, 500);
   });
 
+  pushPurchaseEvent();
   cart = [];
   saveCart();
   renderCart();
@@ -211,8 +213,57 @@ function onCartItemsClick(event) {
   }
 }
 
+function pushProductDetailEvent() {
+  const product = elements.productDetail;
+  if (!product) {
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'detail',
+    ecommerce: {
+      currency: product.dataset.productCurrency || 'USD',
+      value: Number(product.dataset.productPrice),
+      items: [
+        {
+          item_id: product.dataset.productId,
+          item_name: product.dataset.productName,
+          item_category: product.dataset.productCategory || '',
+          price: Number(product.dataset.productPrice),
+          quantity: 1,
+        },
+      ],
+    },
+  });
+}
+
+function pushPurchaseEvent() {
+  if (!cart.length) {
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'purchase',
+    ecommerce: {
+      transaction_id: `demo_${Date.now()}`,
+      currency: 'USD',
+      value: getCartTotal(),
+      items: cart.map((item) => ({
+        item_id: item.id,
+        item_name: item.name,
+        item_category: item.category || '',
+        price: item.price,
+        quantity: item.quantity,
+      })),
+    },
+  });
+}
+
 function init() {
   renderCart();
+  pushProductDetailEvent();
 
   elements.openButton?.addEventListener('click', openCart);
   elements.closeButtons.forEach((button) => button.addEventListener('click', closeCart));
