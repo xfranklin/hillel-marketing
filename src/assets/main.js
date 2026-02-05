@@ -71,6 +71,8 @@ function closeCart() {
 
 function addToCart(productData) {
   const quantity = Number(productData.quantity || 1);
+  const normalizedPrice = Number(productData.price);
+  const normalizedCurrency = productData.currency || 'USD';
   const existing = cart.find((item) => item.id === productData.id);
 
   if (existing) {
@@ -80,12 +82,21 @@ function addToCart(productData) {
       id: productData.id,
       name: productData.name,
       category: productData.category,
-      price: Number(productData.price),
-      currency: productData.currency,
+      price: normalizedPrice,
+      currency: normalizedCurrency,
       image: productData.image,
       quantity,
     });
   }
+
+  pushAddToCartEvent({
+    id: productData.id,
+    name: productData.name,
+    category: productData.category,
+    price: normalizedPrice,
+    currency: normalizedCurrency,
+    quantity,
+  });
 
   saveCart();
   renderCart();
@@ -232,6 +243,26 @@ function pushProductDetailEvent() {
           item_category: product.dataset.productCategory || '',
           price: Number(product.dataset.productPrice),
           quantity: 1,
+        },
+      ],
+    },
+  });
+}
+
+function pushAddToCartEvent(product) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'add_to_cart',
+    ecommerce: {
+      currency: product.currency || 'USD',
+      value: product.price * product.quantity,
+      items: [
+        {
+          item_id: product.id,
+          item_name: product.name,
+          item_category: product.category || '',
+          price: product.price,
+          quantity: product.quantity,
         },
       ],
     },
