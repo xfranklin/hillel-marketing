@@ -43,6 +43,24 @@ function getCartTotal() {
 function openCart() {
   elements.cartModal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-open');
+
+  if (cart.length) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'view_cart',
+      ecommerce: {
+        currency: 'USD',
+        value: getCartTotal(),
+        items: cart.map((item) => ({
+          item_id: item.id,
+          item_name: item.name,
+          item_category: item.category || '',
+          price: item.price,
+          quantity: item.quantity,
+        })),
+      },
+    });
+  }
 }
 
 function closeCart() {
@@ -60,6 +78,7 @@ function addToCart(productData) {
     cart.push({
       id: productData.id,
       name: productData.name,
+      category: productData.category,
       price: Number(productData.price),
       currency: productData.currency,
       image: productData.image,
@@ -160,6 +179,7 @@ function getButtonProduct(button) {
   return {
     id: button.dataset.productId,
     name: button.dataset.productName,
+    category: button.dataset.productCategory,
     price: button.dataset.productPrice,
     currency: button.dataset.productCurrency,
     image: button.dataset.productImage,
